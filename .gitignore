@@ -4,29 +4,60 @@ __pycache__/
 *.pyo
 *.pyd
 *.so
+*.egg
 *.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual Environments
 .env
 .venv/
 venv/
 ENV/
+env/
 
-# Jupyter
+# Jupyter Notebooks
 .ipynb_checkpoints/
 *.ipynb_checkpoints
 
-# VS Code
+# IDE
 .vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-# OS
+# Operating System
 .DS_Store
 Thumbs.db
+*.tmp
 
-# Data / Models / Figures (generated)
-data/processed/*
-models/*
-reports/figures/*
+# Data files (CSV, Excel, Parquet)
+data/raw/*.csv
+data/raw/*.xlsx
+data/raw/*.parquet
+data/processed/*.csv
+data/processed/*.xlsx
+data/processed/*.parquet
 
-# Allow placeholder files
+# Model files
+models/*.pkl
+models/*.joblib
+models/*.h5
+models/*.keras
+
+# Reports and figures
+reports/figures/*.png
+reports/figures/*.jpg
+reports/figures/*.pdf
+
+# Logs
+*.log
+logs/
+
+# Allow placeholder files to maintain directory structure
+!data/raw/.gitkeep
 !data/processed/.gitkeep
 !models/.gitkeep
 !reports/figures/.gitkeep

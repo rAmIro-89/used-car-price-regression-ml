@@ -1,7 +1,18 @@
-numpy>=1.26
-pandas>=2.0
-scikit-learn>=1.4
-statsmodels>=0.14
-matplotlib>=3.8
-seaborn>=0.13
-jupyter>=1.0
+# Core Data Science Libraries
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.4.0
+
+# Statistical Modeling
+statsmodels>=0.14.0
+
+# Visualization
+matplotlib>=3.8.0
+seaborn>=0.13.0
+
+# Jupyter Environment
+jupyter>=1.0.0
+ipykernel>=6.25.0
+
+# Optional: Advanced Regression
+scipy>=1.11.0
