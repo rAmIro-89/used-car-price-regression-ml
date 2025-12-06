@@ -27,6 +27,16 @@ This model provides instant price predictions based on vehicle attributes, enabl
 
 **Note:** 1 lakh = 100,000 Indian Rupees (₹) ≈ $1,500 CAD (varies by exchange rate)
 
+### Price Distribution
+
+![Price Distribution](img/01-price-distribution.png)
+*Figure 1 – Distribution of used car prices in the dataset*
+
+### Feature Correlations
+
+![Correlation Matrix](img/02-correlation-matrix.png)
+*Figure 2 – Correlation matrix of key features with price*
+
 ---
 
 ## 📈 Model Performance
@@ -126,6 +136,16 @@ used-car-price-regression-ml/
 - Correlation analysis with numeric features (odometer, age, engine specs)
 - Categorical feature impact (brand, fuel type, transmission)
 - Missing value and duplicate detection
+
+### Model Diagnostics
+
+![Residuals Plot](img/03-residuals.png)
+*Figure 3 – Residual analysis showing model fit quality*
+
+### Predictions vs Actuals
+
+![Actual vs Predicted](img/04-actual-vs-predicted.png)
+*Figure 4 – Model predictions compared to actual prices (R² = 0.284)*
 
 ### 2. Data Cleaning & Feature Engineering
 - Remove low-utility columns (car_name, registration_year, insurance_validity)
