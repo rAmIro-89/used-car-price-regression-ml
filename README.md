@@ -148,50 +148,102 @@ used-car-price-regression-ml/
 *Figure 4 – Model predictions compared to actual prices (R² = 0.284)*
 
 ### 2. Data Cleaning & Feature Engineering
-- Remove low-utility columns (car_name, registration_year, insurance_validity)
-- Create `vehicle_age` from model_year
-- Handle outliers using IQR method
-- Log-transform target to stabilize variance
-- One-hot encoding for categorical variables
+
+- **Column Removal:** Remove low-utility columns (car_name, registration_year, insurance_validity)
+- **Feature Engineering:** Create `vehicle_age` from model_year; develop mileage categories
+- **Outlier Detection:** Apply IQR method with 1.5× threshold
+- **Transformation:** Log-transform target (price) to stabilize variance
+- **Encoding:** One-hot encode categorical variables (brand, fuel_type, transmission)
+- **Scaling:** Standardize numeric features for consistent interpretation
 
 ### 3. Modeling & Validation
-- Train/test split (80/20)
-- Multiple approaches tested:
-  - OLS baseline (statsmodels)
-  - Robust OLS with HC3 standard errors (heteroscedasticity-robust)
-  - Log-price transformation model
-- VIF multicollinearity checks
-- Residual diagnostics (normality, homoscedasticity)
 
-### 4. Evaluation
-- RMSE, MAE, R², MAPE metrics
-- Predictions vs actual scatter plots
-- Feature coefficient interpretation
-- Retransformation bias correction for log models
+- **Data Split:** Train/test 80/20 ratio, preserving price distribution
+- **Baseline Model:** OLS regression with detailed diagnostics
+- **Robust Estimation:** HC3 heteroscedasticity-robust standard errors
+- **Log-Price Model:** Test log-transformed target to improve R² 
+- **Multicollinearity:** VIF calculation for all predictors
+- **Diagnostics:** Durbin-Watson, Jarque-Bera, Breusch-Pagan tests
+
+### 4. Evaluation & Results
+
+- **Metrics:** RMSE, MAE, R², MAPE across model variants
+- **Residuals:** Normality tests, homoscedasticity checks
+- **Predictions:** Actual vs predicted scatter plots with confidence intervals
+- **Coefficients:** Feature importance and elasticity calculations
+- **Bias Correction:** Retransformation adjustments for log models
 
 ---
 
-## 📝 Key Findings
+## 📊 Key Findings
 
 - **Best Predictors:** Vehicle age, odometer reading, engine power, brand
-- **Log Transformation:** Improved R² from 0.265 to 0.284 and reduced MAPE
+- **Log Transformation:** Improved R² from 0.265 to 0.284 and reduced MAPE to ~40%
 - **Robust Errors:** HC3 covariance provides valid inference despite heteroscedasticity
 - **Multicollinearity:** Engine displacement and power moderately correlated (VIF ~5-6)
 - **Prediction Accuracy:** Model explains ~28% of price variance (typical for complex used car markets)
 
 ---
 
-## 👤 Contact
+## 🛠️ Technologies & Stack
 
-**Ramiro Ottone Villar**  
-Data Scientist | ML Engineer
+| Component | Technology |
+|-----------|-----------|
+| **Data Processing** | Pandas, NumPy |
+| **Statistical Modeling** | Statsmodels, SciPy |
+| **Visualization** | Matplotlib, Seaborn |
+| **ML Framework** | Scikit-learn |
+| **Notebooks** | Jupyter |
+| **Language** | Python 3.9+ |
 
-- 📧 Email: ramiro.ottone@example.com
-- 💼 LinkedIn: [linkedin.com/in/ramiro-ottone](https://linkedin.com/in/ramiro-ottone)
-- 🐙 GitHub: [@rAmIro-89](https://github.com/rAmIro-89)
+---
+
+## 🎯 Skills Demonstrated
+
+- **Regression Analysis:** OLS estimation, robust covariance estimation, log-transformation techniques
+- **Data Preprocessing:** Feature engineering, outlier detection, multicollinearity assessment  
+- **Statistical Testing:** Heteroscedasticity diagnosis, normality tests, residual analysis
+- **Visualization:** Distribution plots, correlation matrices, residuals diagnostics, prediction scatter plots
+- **Business Insights:** Real-world price prediction for marketplace decisions
+- **Model Diagnostics:** VIF calculation, coefficient interpretation, assumption validation
+- **Python Stack:** Pandas, NumPy, Statsmodels, Scikit-learn, Matplotlib, Seaborn
+
+---
+
+## 🚀 How to Run
+
+### 1. Exploratory Analysis
+```bash
+jupyter notebook notebooks/used-cars-eda.ipynb
+```
+Explore data distributions, missing values, correlations, and categorical relationships.
+
+### 2. Model Training & Evaluation
+```bash
+jupyter notebook notebooks/used-cars-multiple-regression.ipynb
+```
+Train OLS, robust, and log-transformed models. Conduct residual diagnostics.
+
+### 3. Quick Usage
+```bash
+python example_usage.py
+```
+
+### 4. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
 ---
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+**Ramiro Ottone Villar**  
+[![GitHub](https://img.shields.io/badge/GitHub-rAmIro--89-181717?style=flat&logo=github)](https://github.com/rAmIro-89)  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat&logo=linkedin)](https://linkedin.com/in/your-profile)
+
+---
+
+⭐ **If you find this project useful, please consider starring the repository!**
