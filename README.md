@@ -25,7 +25,7 @@ This model provides instant price predictions based on vehicle attributes, enabl
   - Performance metrics (engine displacement, power, torque)
   - Physical attributes (seats, body type)
 
-**Note:** 1 lakh = 100,000 Indian Rupees (₹) ≈ $1,500 CAD (varies by exchange rate)
+**Note:** 1 lakh = 100,000 Indian Rupees (₹) ≈ $1,500 USD (varies by exchange rate)
 
 ### Price Distribution
 
@@ -48,7 +48,7 @@ This model provides instant price predictions based on vehicle attributes, enabl
 | Log-Price Model | 11.52 | 6.32 | 0.284 | 39.8% |
 
 **Best Model:** Log-transformed target with robust standard errors  
-**Performance:** Predicts prices within ±6.32 lakhs (~₹632k or $9,500 CAD) on average
+**Performance:** Predicts prices within ±6.32 lakhs (MAE); RMSE = 11.52 lakhs (≈ $138 USD equivalent error magnitude)
 
 ---
 
